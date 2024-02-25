@@ -1,5 +1,7 @@
 :root {
   --bg-clr: #020204;
+  --txt-main: #dcc7d5;
+  --columbia-blue: #c7d6dbff;
 
   --misty-rose: #ecced1ff;
   --cordovan: rgb(129, 52, 64);
@@ -13,13 +15,39 @@
   --timberwolf: #d9d5d8ff;
   --melon: #f2a698ff;
   --french-gray: #bbb9c6ff;
-  --columbia-blue: #c7d6dbff;
   --columbia-blue-opa: #c7d6db60;
-
-  --primary-clr: rgba(255, 255, 255, 0.208);
+  /* 
+  --primary-clr: rgba(255, 255, 255, 0.208); */
   --glitch-1: #009ea980;
   --glitch-2: #8b376780;
   --glitch-3: rgb(201, 90, 71);
+
+  /*    MARGIN    */
+  --outer-margin: 6vw;
+
+  /*    FONT SIZE   */
+  --fs-100: 1.4rem;
+  --fs-200: 1.6rem;
+  --fs-300: 1.8rem;
+  --fs-400: 2.2rem;
+  --fs-500: 2.4rem;
+  --fs-600: 3.2rem;
+  --fs-700: 4rem;
+  --fs-800: 7.7rem;
+}
+
+@media screen and (width < 560px) {
+  :root {
+    /*    FONT SIZE   */
+    --fs-100: 1.4rem;
+    --fs-200: 1.6rem;
+    --fs-300: 1.8rem;
+    --fs-400: 2rem;
+    --fs-500: 2.4rem;
+    --fs-600: 3.2rem;
+    --fs-700: 4rem;
+    --fs-800: 6rem;
+  }
 }
 
 * {
@@ -30,11 +58,13 @@
 
 html {
   font-size: 62.5%;
+  height: 100vh;
+  width: 100vw;
 }
 
 body {
   background-color: var(--bg-clr);
-  color: white;
+  color: var(--txt-main);
 }
 
 a {
@@ -42,16 +72,22 @@ a {
   color: unset;
 }
 
-/*                 NAVBAR                     */
+/*      LOADING SCREEN      */
 
-nav {
-  margin: 3em 15rem 3em 15rem;
+.loading-screen {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: var(--bg-clr);
+  z-index: 999;
+  top: 0;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
+  transition: opacity 1s ease-out;
 }
 
-.nav__logo {
+.nav__logo--loading {
   font-size: 3.2rem;
   font-family: anybody;
   font-weight: 300;
@@ -59,9 +95,61 @@ nav {
   display: flex;
   align-items: center;
   overflow: hidden;
+  transition: opacity 1s ease, color 0.8s ease;
+  letter-spacing: 5px;
+  cursor: default;
 }
 
+.logo__x--loading {
+  font-size: 5rem;
+  background: conic-gradient(from 145deg at center, var(--bg-clr) 245deg, rgba(0, 0, 0, 0) 0);
+  z-index: 2;
+  transition: font-size 0.5s ease, font-weight 1s ease, transform 1s ease-out;
+}
+
+.logo__rest--loading {
+  transform: translateX(-115%);
+  transition: transform 1s ease;
+}
+
+.x--maximize {
+  font-size: 1500rem;
+  font-weight: 900;
+  transform: rotate(45deg);
+}
+
+.opacity-zero {
+  opacity: 0;
+}
+
+.color-fade {
+  color: var(--eminence);
+}
+
+.color-dark {
+  color: var(--chestnut);
+}
+
+/*                 NAVBAR                     */
+
+nav {
+  margin: 3em var(--outer-margin) 3em var(--outer-margin);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 /*       NAV__LOGO      */
+
+.nav__logo {
+  font-size: var(--fs-600);
+  font-family: anybody;
+  font-weight: 300;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  letter-spacing: 5px;
+}
 
 .logo__x {
   font-size: 5rem;
@@ -90,48 +178,68 @@ nav {
   justify-content: space-between;
   align-items: center;
   gap: 4rem;
-  font-size: 2.4rem;
+  font-size: var(--fs-500);
   font-family: anybody;
   font-weight: 300;
   list-style-type: none;
+  letter-spacing: 3px;
 }
 
 /*      MAIN      */
 
 main {
-  margin-top: 10em;
+  margin: 2rem 0 0 var(--outer-margin);
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10rem;
+  gap: 2rem;
 }
 
 .main__left {
-  padding-left: 15rem;
+  /* padding-left: 15rem; */
   font-family: anybody;
   font-size: 1.8rem;
   color: rgb(131, 118, 127);
   display: flex;
   flex-direction: column;
-  padding-bottom: 10rem;
+}
+
+.main-headings {
+  background-color: var(--bg-clr);
+  z-index: 1;
 }
 
 .main__left h1 {
-  font-size: 7.7rem;
-  color: rgb(220, 199, 213);
-  background-color: var(--bg-clr);
+  font-size: var(--fs-800);
+  color: var(--txt-main);
   font-weight: 400;
+  cursor: default;
+  z-index: 2;
 }
 
 .main__left h3 {
   padding-top: 1em;
-  background-color: var(--bg-clr);
+  font-size: var(--fs-400);
   font-weight: 400;
+  cursor: default;
+  z-index: 2;
+}
+
+.main__right {
+  width: max(900px, 100vw);
+  height: auto;
+}
+
+.main__video {
+  width: 100%;
+  min-width: 755px;
+  height: 100%;
+  object-fit: contain;
 }
 
 /*      MAIN__BTN     */
 .tickets-btn {
-  font-size: large;
+  font-size: var(--fs-400);
   margin-top: 3rem;
   margin-left: 3px;
   background-color: #ffffff00;
@@ -142,12 +250,23 @@ main {
   width: 200px;
   height: 50px;
   transform: translateY(-200%);
-  transition: transform 1s ease;
-  z-index: -1;
+  transition: transform 1.6s ease, margin 1s ease, font-size 1s ease;
+  z-index: 1;
+  align-self: auto;
+  letter-spacing: 6px;
 }
 
 .tickets-btn-show {
   transform: translateY(0);
+}
+.tickets-btn:hover {
+  font-size: 2rem;
+  font-weight: 100;
+  letter-spacing: 6px;
+  /* color: #a6c9d1ba; */
+  color: var(--columbia-blue);
+  cursor: pointer;
+  margin-left: 20px;
 }
 
 @keyframes glitch {
@@ -171,4 +290,88 @@ main {
 
 .glitch {
   animation: glitch 6000ms infinite;
+}
+
+@media screen and (560px <= width < 1440px) {
+  .nav__items {
+    display: none;
+  }
+
+  .main__left {
+    width: 40vw;
+    z-index: 1;
+  }
+
+  .main-headings {
+    background-color: #ffffff00;
+    min-width: 52rem;
+  }
+
+  .main__right {
+    overflow: hidden;
+    margin-left: -10vw;
+    width: 60vw;
+  }
+
+  .main__video {
+    width: 755px;
+    left: 0;
+    object-fit: cover;
+  }
+}
+
+@media screen and (width < 560px) {
+  .nav__items {
+    display: none;
+  }
+
+  main {
+    left: 0;
+    margin-left: 0;
+    overflow: visible;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.636) 75%, rgba(0, 0, 0, 0));
+  }
+
+  .main__left {
+    position: absolute;
+    /* display: none; */
+    align-self: flex-start;
+    left: var(--outer-margin);
+    margin-top: 56rem;
+  }
+
+  .main-headings {
+    background-color: #ffffff00;
+    min-width: 30rem;
+  }
+
+  .main-headings h1 {
+    position: absolute;
+    margin-top: -54rem;
+    margin-left: -6vw;
+    padding-left: 6vw;
+    padding-bottom: 6rem;
+  }
+
+  .main__right {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .main__video {
+    width: 755px;
+    margin-left: -4rem;
+    object-fit: cover;
+    margin-top: 8rem;
+  }
+
+  /* .tickets-btn {
+    position: absolute;
+    margin-top: -34rem;
+  } */
 }

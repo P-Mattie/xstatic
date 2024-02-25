@@ -14,6 +14,11 @@
     <script src="/script.js" defer></script>
   </head>
   <body>
+    <div class="loading-screen">
+      <a href="#" class="nav__logo--loading"
+        ><span class="logo__x--loading">X</span><span class="logo__rest--loading">STATIC</span></a
+      >
+    </div>
     <div class="container">
       <nav>
         <a href="index.html" class="nav__logo"><span class="logo__x">X</span><span class="logo__rest">STATIC</span></a>
@@ -28,16 +33,18 @@
       </nav>
       <main>
         <div class="main__left">
-          <h1>There’s No Place like Home</h1>
-          <h3>
-            Once again we return to our home venue<br />
-            for another unforgettbale experience
-          </h3>
+          <div class="main-headings">
+            <h1>There’s No Place like Home</h1>
+            <h3>
+              Once again we return to our home venue<br />
+              for another unforgettbale experience
+            </h3>
+          </div>
           <button class="tickets-btn glitch"><a href="#">TICKETS</a></button>
         </div>
         <div class="main__right">
-          <video class="main__video" width="1080px" autoplay loop muted>
-            <source src="/Assets/club_animation.mp4" />
+          <video class="main__video" autoplay loop muted>
+            <source src="/Assets/club_animation.mp4" type="video/mp4" />
           </video>
         </div>
       </main>
