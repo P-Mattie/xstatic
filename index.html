@@ -8,27 +8,30 @@
       href="https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>XSTATIC</title>
     <link rel="stylesheet" href="/style.css" />
     <script src="/script.js" defer></script>
   </head>
   <body>
-    <div class="loading-screen">
+    <!-- <div class="loading-screen">
       <a href="#" class="nav__logo--loading"
         ><span class="logo__x--loading">X</span><span class="logo__rest--loading">STATIC</span></a
       >
-    </div>
+    </div> -->
     <div class="container">
       <nav>
         <a href="index.html" class="nav__logo"><span class="logo__x">X</span><span class="logo__rest">STATIC</span></a>
         <ul class="nav__items">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Events</a></li>
-          <li><a href="#">Gallery</a></li>
-          <li><a href="#">Tickets</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">News</a></li>
+          <li><a class="nav__item nav__item--active" href="#">Home</a></li>
+          <li><a class="nav__item" href="#">Events</a></li>
+          <li><a class="nav__item" href="#">Gallery</a></li>
+          <li><a class="nav__item" href="#">Tickets</a></li>
+          <li><a class="nav__item" href="#">About</a></li>
+          <li><a class="nav__item" href="#">News</a></li>
         </ul>
       </nav>
       <main>
@@ -36,8 +39,8 @@
           <div class="main-headings">
             <h1>There’s No Place like Home</h1>
             <h3>
-              Once again we return to our home venue<br />
-              for another unforgettbale experience
+              We return to our home venue for another unforgettable experience
+              <span class="h3-underlay"></span>
             </h3>
           </div>
           <button class="tickets-btn glitch"><a href="#">TICKETS</a></button>
@@ -46,6 +49,42 @@
           <video class="main__video" autoplay loop muted>
             <source src="/Assets/club_animation.mp4" type="video/mp4" />
           </video>
+        </div>
+
+        <div class="address-heading">
+          <div class="address-line">
+            <h3>Evergreen Valley Campgrounds</h3>
+            <div class="arrows-box">
+              <div class="arrows-right">↤↤↤</div>
+              <div class="arrows-right">↤↤↤</div>
+              <div class="arrows-right">↤↤↤</div>
+              <div class="arrows-right">↤↤↤</div>
+              <div class="arrows-right">↤↤↤</div>
+              <div class="arrows-right">↤↤↤</div>
+            </div>
+          </div>
+          <div class="address-line address-line-2">
+            <h3>Cascade National Forest</h3>
+            <div class="arrows-box">
+              <div class="arrows-left">↦↦↦</div>
+              <div class="arrows-left">↦↦↦</div>
+              <div class="arrows-left">↦↦↦</div>
+              <div class="arrows-left">↦↦↦</div>
+              <div class="arrows-left">↦↦↦</div>
+              <div class="arrows-left">↦↦↦</div>
+            </div>
+          </div>
+          <div class="address-line address-line-3">
+            <h3>Mystica</h3>
+            <div class="arrows-box">
+              <div class="arrows-right">↤↤↤</div>
+              <div class="arrows-right">↤↤↤</div>
+              <div class="arrows-right">↤↤↤</div>
+              <div class="arrows-right">↤↤↤</div>
+              <div class="arrows-right">↤↤↤</div>
+              <div class="arrows-right">↤↤↤</div>
+            </div>
+          </div>
         </div>
       </main>
       <section></section>

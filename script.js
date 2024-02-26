@@ -63,3 +63,16 @@ document.addEventListener("DOMContentLoaded", function () {
     ticketsBtn.classList.add("tickets-btn-show");
   }, 3800);
 });
+
+//        NAV
+
+const navItems = document.querySelectorAll(".nav__item");
+
+navItems.forEach((item) => {
+  item.addEventListener("click", function () {
+    navItems.forEach((navItem) => {
+      navItem.classList.remove("nav__item--active");
+    });
+    item.classList.add("nav__item--active");
+  });
+});
