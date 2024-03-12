@@ -13,8 +13,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>XSTATIC</title>
-    <link rel="stylesheet" href="/style.css" />
-    <script src="/script.js" defer></script>
+    <link rel="stylesheet" href="/styles/base.css">
+    <link rel="stylesheet" href="/styles/style.css" />
+    <script src="/script.js" type="module"></script>
   </head>
   <body>
     <!-- <div class="loading-screen">
@@ -34,14 +35,58 @@
           <li><a class="nav__item" href="#">News</a></li>
         </ul>
       </nav>
-      <main>
+      <div class="main-sticky-support"><main>
         <div class="main__left">
-          <div class="main-headings">
+          <div class="main-headings" data-scroll-container>
             <h1>There’s No Place like Home</h1>
-            <h3>
+            <h3 class="sub-heading">
               We return to our home venue for another unforgettable experience
               <span class="h3-underlay"></span>
             </h3>
+            <div class="event-setting">
+              <h2 class="event__date">27 - 29 June 2025</h2>
+              <div class="event__address">
+                <div class="address-line">
+                  <h3>Evergreen Valley Campgrounds</h3>
+                  <div class="arrows-box">
+                    <div class="arrows-right">↤↤↤</div>
+                    <div class="arrows-right">↤↤↤</div>
+                    <div class="arrows-right">↤↤↤</div>
+                    <div class="arrows-right">↤↤↤</div>
+                    <div class="arrows-right">↤↤↤</div>
+                    <div class="arrows-right">↤↤↤</div>
+                    <div class="arrows-right">↤↤↤</div>
+                    <div class="arrows-right">↤↤↤</div>
+                  </div>
+                </div>
+                <div class="address-line address-line-2">
+                  <h3>Cascade National Forest</h3>
+                  <div class="arrows-box">
+                    <div class="arrows-left">↦↦↦</div>
+                    <div class="arrows-left">↦↦↦</div>
+                    <div class="arrows-left">↦↦↦</div>
+                    <div class="arrows-left">↦↦↦</div>
+                    <div class="arrows-left">↦↦↦</div>
+                    <div class="arrows-left">↦↦↦</div>
+                    <div class="arrows-left">↦↦↦</div>
+                    <div class="arrows-left">↦↦↦</div>
+                  </div>
+                </div>
+                <div class="address-line address-line-3">
+                  <h3>Mystica</h3>
+                  <div class="arrows-box">
+                    <div class="arrows-right">↤↤↤</div>
+                    <div class="arrows-right">↤↤↤</div>
+                    <div class="arrows-right">↤↤↤</div>
+                    <div class="arrows-right">↤↤↤</div>
+                    <div class="arrows-right">↤↤↤</div>
+                    <div class="arrows-right">↤↤↤</div>
+                    <div class="arrows-right">↤↤↤</div>
+                    <div class="arrows-right">↤↤↤</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <button class="tickets-btn glitch"><a href="#">TICKETS</a></button>
         </div>
@@ -50,44 +95,10 @@
             <source src="/Assets/club_animation.mp4" type="video/mp4" />
           </video>
         </div>
-
-        <div class="address-heading">
-          <div class="address-line">
-            <h3>Evergreen Valley Campgrounds</h3>
-            <div class="arrows-box">
-              <div class="arrows-right">↤↤↤</div>
-              <div class="arrows-right">↤↤↤</div>
-              <div class="arrows-right">↤↤↤</div>
-              <div class="arrows-right">↤↤↤</div>
-              <div class="arrows-right">↤↤↤</div>
-              <div class="arrows-right">↤↤↤</div>
-            </div>
-          </div>
-          <div class="address-line address-line-2">
-            <h3>Cascade National Forest</h3>
-            <div class="arrows-box">
-              <div class="arrows-left">↦↦↦</div>
-              <div class="arrows-left">↦↦↦</div>
-              <div class="arrows-left">↦↦↦</div>
-              <div class="arrows-left">↦↦↦</div>
-              <div class="arrows-left">↦↦↦</div>
-              <div class="arrows-left">↦↦↦</div>
-            </div>
-          </div>
-          <div class="address-line address-line-3">
-            <h3>Mystica</h3>
-            <div class="arrows-box">
-              <div class="arrows-right">↤↤↤</div>
-              <div class="arrows-right">↤↤↤</div>
-              <div class="arrows-right">↤↤↤</div>
-              <div class="arrows-right">↤↤↤</div>
-              <div class="arrows-right">↤↤↤</div>
-              <div class="arrows-right">↤↤↤</div>
-            </div>
-          </div>
-        </div>
-      </main>
-      <section></section>
+      </main></div>
+      <section class="section__lineup">
+        <img class="label-logo" src="/Assets/afterlife-falling-man.svg" alt="">
+      </section>
     </div>
   </body>
 </html>
