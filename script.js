@@ -1,54 +1,54 @@
-import LocomotiveScroll from 'locomotive-scroll';
+// import LocomotiveScroll from 'locomotive-scroll';
 
 
 //          LOADING SCREEN
 
-// const button = document.querySelector(".tickets-btn");
-// console.log(button);
-// button.addEventListener("mouseenter", () => {
-//   console.log("Mouse entered button");
-// });
+const button = document.querySelector(".tickets-btn");
+console.log(button);
+button.addEventListener("mouseenter", () => {
+  console.log("Mouse entered button");
+});
 
-// button.addEventListener("mouseleave", () => {
-//   console.log("Mouse left button");
-// });
+button.addEventListener("mouseleave", () => {
+  console.log("Mouse left button");
+});
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   const xOfLogoLoading = document.querySelector(".logo__x--loading");
-//   const restOfLogoLoading = document.querySelector(".logo__rest--loading");
-//   const navLogoLoading = document.querySelector(".nav__logo--loading");
-//   const loadingScreen = document.querySelector(".loading-screen");
+document.addEventListener("DOMContentLoaded", function () {
+  const xOfLogoLoading = document.querySelector(".logo__x--loading");
+  const restOfLogoLoading = document.querySelector(".logo__rest--loading");
+  const navLogoLoading = document.querySelector(".nav__logo--loading");
+  const loadingScreen = document.querySelector(".loading-screen");
 
-//   setTimeout(function () {
-//     restOfLogoLoading.classList.add("expand--logo");
-//     xOfLogoLoading.classList.add("resize-x");
-//   }, 500);
+  setTimeout(function () {
+    restOfLogoLoading.classList.add("expand--logo");
+    xOfLogoLoading.classList.add("resize-x");
+  }, 500);
 
-//   setTimeout(function () {
-//     restOfLogoLoading.classList.remove("expand--logo");
-//     xOfLogoLoading.classList.remove("resize-x");
-//   }, 2000);
+  setTimeout(function () {
+    restOfLogoLoading.classList.remove("expand--logo");
+    xOfLogoLoading.classList.remove("resize-x");
+  }, 2000);
 
-//   setTimeout(function () {
-//     navLogoLoading.classList.add("color-fade");
-//   }, 2700);
+  setTimeout(function () {
+    navLogoLoading.classList.add("color-fade");
+  }, 2700);
 
-//   setTimeout(function () {
-//     navLogoLoading.classList.add("color-dark");
-//     navLogoLoading.style.overflow = "visible";
-//     restOfLogoLoading.style.color = "#ffffff00";
-//     xOfLogoLoading.classList.add("x--maximize");
-//   }, 3000);
+  setTimeout(function () {
+    navLogoLoading.classList.add("color-dark");
+    navLogoLoading.style.overflow = "visible";
+    restOfLogoLoading.style.color = "#ffffff00";
+    xOfLogoLoading.classList.add("x--maximize");
+  }, 3000);
 
-//   setTimeout(function () {
-//     navLogoLoading.classList.add("opacity-zero");
-//     loadingScreen.classList.add("opacity-zero");
-//   }, 3300);
+  setTimeout(function () {
+    navLogoLoading.classList.add("opacity-zero");
+    loadingScreen.classList.add("opacity-zero");
+  }, 3300);
 
-//   setTimeout(function () {
-//     loadingScreen.style.display = "none";
-//   }, 3900);
-// });
+  setTimeout(function () {
+    loadingScreen.style.display = "none";
+  }, 3900);
+});
 
 //        ON PAGE LOAD
 
@@ -87,6 +87,23 @@ const mainHeadings = document.querySelector(".main-headings");
 window.addEventListener("scroll", function(){
   mainHeadings.scrollTop = window.scrollY
 })
+
+
+// falling man
+
+window.addEventListener("scroll", function(){
+  if(window.scrollY < 500 ){
+    let scrollTop = window.scrollY;
+    let fallingMan = document.querySelector(".falling-man");
+    fallingMan.style.transform = 'translate3d(0,' + ((scrollTop - 200) * 1.2) + 'px,0)';
+  }
+})
+// window.dispatchEvent(new Event('scroll'));
+
+
+
+
+
 
 
 // gets rid of overflow-auto diabling scroll
